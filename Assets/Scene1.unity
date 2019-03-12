@@ -456,6 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  padding: 0.5
 --- !u!1001 &3892514244691297403
 PrefabInstance:
   m_ObjectHideFlags: 0
