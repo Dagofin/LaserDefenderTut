@@ -437,26 +437,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &385222682652787139 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 385222682652787139, guid: 4f78321b51d015748a77f71f3e94362d,
-    type: 3}
-  m_PrefabInstance: {fileID: 3892514244691297403}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &385222682652787140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385222682652787139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd1e3f15ff359324cadfbde0905649f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  padding: 0.5
 --- !u!1001 &3892514244691297403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -524,6 +504,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 385222682652787140, guid: 4f78321b51d015748a77f71f3e94362d,
+        type: 3}
+      propertyPath: laserPrefab
+      value: 
+      objectReference: {fileID: 8728901590216777561, guid: 8d04311dc98845c46ac1185f49a6b7c6,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f78321b51d015748a77f71f3e94362d, type: 3}
 --- !u!1001 &5433408114438351572
