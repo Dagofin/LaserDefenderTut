@@ -11,13 +11,20 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxTimeBetweenShots = 3f;
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 5f;
-
+    [SerializeField] GameObject explosionPrefab;
+    [SerializeField] float deathFXLifetime = 1f;
+    [SerializeField] AudioClip enemyDead;
+    [SerializeField] [Range(0, 1)] float deathSoundVolume = 0.7f;
+    [SerializeField] AudioClip enemyShoot;
+    [SerializeField] [Range(0, 1)] float shootVolume = .1f;
+    AudioSource myAudioSource;
 
 
     // Start is called before the first frame update
     void Start()
     {
         shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,6 +48,7 @@ public class Enemy : MonoBehaviour
     {
         GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+        AudioSource.PlayClipAtPoint(enemyShoot, Camera.main.transform.position, shootVolume);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -56,8 +64,19 @@ public class Enemy : MonoBehaviour
         damageDealer.Hit();
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            Die();
+            
             
         }
+    }
+
+    private void Die()
+    {
+
+        GameObject explosionVFX = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as GameObject;
+        Destroy(explosionVFX, deathFXLifetime);
+        AudioSource.PlayClipAtPoint(enemyDead, Camera.main.transform.position, deathSoundVolume);
+        Destroy(this.gameObject);
+
     }
 }
