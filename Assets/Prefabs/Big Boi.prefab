@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2939585124050364846}
   - component: {fileID: 6860934056050071919}
   m_Layer: 9
-  m_Name: Enemy 1
+  m_Name: Big Boi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eb5ab879edf27d94d8dff7f1b4a80afd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d804a17e90deefe418329f27f9350241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,11 +109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef8bc9499625254d97f448dfad976d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
-  shotCounter: 0
-  minTimeBetweenShots: 0.2
-  maxTimeBetweenShots: 3
-  laserPrefab: {fileID: 4488980817793203067, guid: d32f3b9b6e2444843912488eeabdd62e,
+  health: 1000
+  scoreValue: 600
+  minTimeBetweenShots: 1
+  maxTimeBetweenShots: 2
+  laserPrefab: {fileID: 35524900457456820, guid: e27e48a07ef7aa24897b806c772869a0,
     type: 3}
   projectileSpeed: 5
   explosionPrefab: {fileID: 8269748114546989592, guid: ea95203a679a93f4392ebe04e8751ac0,
@@ -121,7 +121,7 @@ MonoBehaviour:
   deathFXLifetime: 1
   enemyDead: {fileID: 8300000, guid: 0c6b83ac9316d9949a8f47b14f61e35a, type: 3}
   deathSoundVolume: 0.7
-  enemyShoot: {fileID: 8300000, guid: bb077ac0518fc314c8cc205dd1be0e8a, type: 3}
+  enemyShoot: {fileID: 8300000, guid: 7596a29a2f1e6a442a5f8581db2baf3a, type: 3}
   shootVolume: 0.5
 --- !u!58 &7681420952004948213
 CircleCollider2D:

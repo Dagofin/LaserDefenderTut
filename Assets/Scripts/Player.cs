@@ -75,6 +75,11 @@ public class Player : MonoBehaviour
         
     }
 
+    public float GetHealth()
+    {
+        return health;
+    }
+
     private void Move()
     {
         var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
@@ -108,6 +113,7 @@ public class Player : MonoBehaviour
     {
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
+        
         if (health <= 0)
         {
             Die();
@@ -117,6 +123,7 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
+        FindObjectOfType<Level>().LoadGameOver();
         AudioSource.PlayClipAtPoint(playerDead, Camera.main.transform.position, deathSoundVolume);
         Destroy(this.gameObject);
     }
